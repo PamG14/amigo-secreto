@@ -1,7 +1,7 @@
-const nombres = [];
+const amigos = [];
 
-function agregarNombre() {
-    const input = document.getElementById("nombreInput");
+function agregarAmigo() {
+    const input = document.getElementById("amigo");
     const nombre = input.value.trim(); // Elimina espacios extra
 
     if (nombre === "") {
@@ -9,23 +9,25 @@ function agregarNombre() {
         return;
     }
 
-    nombres.push(nombre);
+    amigos.push(nombre);
     input.value = ""; // Limpia el campo después de agregar
     actualizarLista();
 }
 
 function actualizarLista() {
-    const lista = document.getElementById("listaNombres");
-    lista.innerHTML = nombres.map(n => `<li>${n}</li>`).join("");
+    const lista = document.getElementById("listaAmigos");
+    lista.innerHTML = amigos.map(nombre => `<li>${nombre}</li>`).join("");
 }
 
-function sortearNombre() {
-    if (nombres.length === 0) {
+function sortearAmigo() {
+    if (amigos.length === 0) {
         alert("⚠️ No hay nombres para sortear.");
         return;
     }
 
-    const indiceSorteado = Math.floor(Math.random() * nombres.length);
-    document.getElementById("resultado").innerText = `🎉 El amigo secreto es: ${nombres[indiceSorteado]}`;
+    const indiceSorteado = Math.floor(Math.random() * amigos.length);
+    const resultado = document.getElementById("resultado");
+    resultado.innerHTML = `<li>🎉 El amigo secreto es: <strong>${amigos[indiceSorteado]}</strong></li>`;
 }
+
 
