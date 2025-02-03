@@ -26,5 +26,6 @@ function sortearNombre() {
     }
 
     const indiceSorteado = Math.floor(Math.random() * nombres.length);
-    alert(`🎉 El nombre sorteado es: ${nombres[indiceSorteado]}`);
+    document.getElementById("resultado").innerText = `🎉 El amigo secreto es: ${nombres[indiceSorteado]}`;
 }
+
